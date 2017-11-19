@@ -1,4 +1,3 @@
-/* PROGRAMA DE LISTAS FUNCIONAIS */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +9,7 @@
 
 typedef struct {
 
-  char nconta[8]; //Número da conta
+  char nconta[8]; //NÃºmero da conta
   float saldo; //Saldo cliente
   char nome[61]; //Nome cliente
   char cpf[12]; //Cpf cliente
@@ -59,15 +58,15 @@ void menu(){
         system("CLS");
         printf("Bem vindo ao Banco--Dinheiro--Certo\n\n");
         printf("Digite 1 para cadastrar uma conta.\n");
-        printf("Digite 2 para buscar uma conta pelo seu nº.\n");
+        printf("Digite 2 para buscar uma conta pelo seu nÂº.\n");
         printf("Digite 3 para consultar o saldo de uma conta.\n");
-        printf("Digite 4 para fazer depósito em uma conta.\n");
+        printf("Digite 4 para fazer depÃ³sito em uma conta.\n");
         printf("Digite 5 para fazer saque de uma conta.\n");
         printf("Digite 6 para entrar no menu administrativo e acessar todas as contas.\n");
         printf("Digite 7 para entrar no menu administrativo e remover uma conta.\n");
         printf("Digite 0 para sair do programa.\n");
 
-        printf("Sua opção: ");
+        printf("Sua opÃ§Ã£o: ");
         scanf("%d",&chec);
         getchar();
         switch(chec){
@@ -99,7 +98,7 @@ void menu(){
 
             system("cls");
 
-            printf("Digite um número de conta para remover:\n");
+            printf("Digite um nÃºmero de conta para remover:\n");
             scanf("%s",nCont);
 
             removerClientes(cliente,nCont);
@@ -166,13 +165,13 @@ void cadastrarClientes(Usuario* x){
         system("cls");
 
         x[cont].ativo = 1;
-        printf("Seu número da conta é: %s  [ATENÇÃO: NÃO DEIXE DE ANOTAR]",x[cont].nconta);
+        printf("Seu nÃºmero da conta Ã©: %s  [ATENÃ‡ÃƒO: NÃƒO DEIXE DE ANOTAR]",x[cont].nconta);
         printf("\n\n\nCADASTRO REALIZADO COM SUCESSO...\n\n\n");
         printf("\a\a");
 
         cont++;
 
-        printf("Digite sim para continuar a fazer mais cadastros.\nDigite não para voltar ao menu.\n");
+        printf("Digite sim para continuar a fazer mais cadastros.\nDigite nÃ£o para voltar ao menu.\n");
         scanf("%d",&chec);
 
         system("cls");
@@ -204,7 +203,7 @@ void listarClientes(Usuario *x){
             if(x[i].ativo==1){
                 printf("\n\n--------Cliente [%d]------------\n",i);
                 fflush(stdin);
-                printf("\nNúmero da Conta: %s",x[i].nconta);
+                printf("\nNÃºmero da Conta: %s",x[i].nconta);
                 printf("\nNome: %s\n",x[i].nome);
                 printf("CPF: %s\n",x[i].cpf);
                 printf("Telefone: %s\n",x[i].telefone);
@@ -253,9 +252,9 @@ void removerClientes(Usuario *x){
                     x[i].ativo=0;
                     printf("\n\nCliente removido com sucesso.\n\n");
             }else if(res!=-1 && res!=-2 && x[i].saldo != 0.0 && x[i].ativo == 1){
-                    printf("\n\nCliente não pode ser removido, pois seu saldo é superior a zero.\n\n");
+                    printf("\n\nCliente nÃ£o pode ser removido, pois seu saldo Ã© superior a zero.\n\n");
             }else{
-                    printf("\nConta não encontrada ou o cadastro está vazio.\n");
+                    printf("\nConta nÃ£o encontrada ou o cadastro estÃ¡ vazio.\n");
             }
         }
 }
@@ -270,10 +269,10 @@ void consultarSaldoClientes(Usuario* x,char nrConta[8]){
     for(i=1; i < cont; i++){
 
             if(res!=-1 && res!=-2 && x[res].ativo == 1){
-                    printf("\n\nO saldo do cliente %s é de R$%2.f.\n\n",x[res].nome, x[res].saldo);
+                    printf("\n\nO saldo do cliente %s Ã© de R$%2.f.\n\n",x[res].nome, x[res].saldo);
                     system("pause");
             }else{
-                    printf("\nConta não encontrada.\n");
+                    printf("\nConta nÃ£o encontrada.\n");
                     system("pause");
                     getchar();
             }
@@ -291,7 +290,7 @@ void consultarSaldoClientes(Usuario* x,char nrConta[8]){
         fflush(stdin);
         if (sscanf (x[cont].cpf, "%d", &cpfi) != 1)
         {
-            fprintf (stderr, "Por favor, entre com um valor numérico.\n");
+            fprintf (stderr, "Por favor, entre com um valor numÃ©rico.\n");
         }
         else
         {
@@ -312,7 +311,7 @@ void checarNumTel(Usuario* x){    //Tratar telefone
 
         if (sscanf (x[cont].telefone, "%d", &teli) != 1)
         {
-            fprintf (stderr, "Por favor, entre com um valor numérico.\n");
+            fprintf (stderr, "Por favor, entre com um valor numÃ©rico.\n");
         }
         else
         {
@@ -336,13 +335,13 @@ void checarNumConta(Usuario* x){
 
         if(res!= -1 && res != -2){
             system("cls");
-            printf("Conta já está cadastrada, por favor, insira outra.\n\n");
+            printf("Conta jÃ¡ estÃ¡ cadastrada, por favor, insira outra.\n\n");
             checarNumConta(x);
         }
 
         if (sscanf (x[cont].nconta, "%d", &contai) != 1)
         {
-            fprintf (stderr, "Por favor, entre com um valor numérico.\n");
+            fprintf (stderr, "Por favor, entre com um valor numÃ©rico.\n");
         }
         else
         {
@@ -368,7 +367,7 @@ void buscarsw(Usuario* x){
             printf("\a\a");
             break;
         }else{
-            printf("A conta não pode ser encontrada.\n\n");
+            printf("A conta nÃ£o pode ser encontrada.\n\n");
             break;
         }
     }
@@ -385,11 +384,11 @@ void consultarsw(Usuario* x){
 
         if(res!= -1 && res != -2){
             system("cls");
-            printf("A conta foi encontrada e seu saldo é de R$%2.f .\n\n",x[res].saldo);
+            printf("A conta foi encontrada e seu saldo Ã© de R$%2.f .\n\n",x[res].saldo);
             printf("\a\a");
             break;
         }else{
-            printf("A conta não pode ser encontrada.\n\n");
+            printf("A conta nÃ£o pode ser encontrada.\n\n");
             break;
         }
     }
@@ -408,7 +407,7 @@ void saquesw(Usuario* x){
 
         if(res!= -1 && res != -2){
             system("cls");
-            printf("\nO saldo dessa conta é R$%2.f .",x[res].saldo);
+            printf("\nO saldo dessa conta Ã© R$%2.f .",x[res].saldo);
             printf("\nDigite a quantidade que deseja sacar da conta:\n");
             scanf("%f",&quant);
                 if(quant>0 && quant<=x[res].saldo){
@@ -423,7 +422,7 @@ void saquesw(Usuario* x){
         break;
 
         }else{
-            printf("A conta não pode ser encontrada.\n\n");
+            printf("A conta nÃ£o pode ser encontrada.\n\n");
             break;
         }
     }
@@ -442,7 +441,7 @@ void depositarsw(Usuario* x){
 
         if(res!= -1 && res != -2){
             system("cls");
-            printf("\nO saldo dessa conta é R$%2.f .",x[res].saldo);
+            printf("\nO saldo dessa conta Ã© R$%2.f .",x[res].saldo);
             printf("\nDigite a quantidade que deseja depositar na conta:\n");
             scanf("%f",&quant);
                 if(quant>0){
@@ -460,7 +459,7 @@ void depositarsw(Usuario* x){
         break;
 
         }else{
-            printf("A conta não pode ser encontrada.\n\n");
+            printf("A conta nÃ£o pode ser encontrada.\n\n");
             break;
         }
     }

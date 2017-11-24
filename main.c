@@ -171,11 +171,17 @@ void cadastrarClientes(Usuario* x){
 
         cont++;
 
-        printf("Digite sim para continuar a fazer mais cadastros.\nDigite não para voltar ao menu.\n");
+        printf("Digite 1 para continuar a fazer mais cadastros.\nDigite 0 para voltar ao menu.\n");
         scanf("%d",&chec);
 
         system("cls");
-
+      
+      if(chec>100){
+        printf("Foram cadastrada 100 contas! Não se pode cadastrar mais!");
+        system("pause");
+        break;
+        menu();
+      }
 
     }while(chec==1);
 

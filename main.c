@@ -183,7 +183,7 @@ void cadastrarClientes(Usuario* x){
         menu();
       }
 
-    }while(chec==1);
+    }while(cont<100);
 
 }
 
